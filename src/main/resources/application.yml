@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: 01_Reports_App
+  datasource:
+    username: root
+    password: Subha@123
+    url: jdbc:mysql://localhost:3306/jrtp
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mvc:
+    view:
+      prefix:  /pages/
+      suffix:  .jsp
+  
+    
