@@ -8,12 +8,12 @@ import org.springframework.stereotype.Repository;
 
 import com.subh.reportapp.entity.CitizenPlan;
 
-
+//@Repository
 public interface CitizenPlanRepository extends JpaRepository<CitizenPlan, Integer>{
-//	@Query("select distinct(PlanName) from CitizenPlan")
-//	public List<String> getPlanName();
-//	
-//	@Query("select distinct(Plan_Status) from citizen_plans_info")
-//	public List<String> getPlanStatus();
+	@Query("Select distinct (planStatus) from CitizenPlan")
+	public List<String> getPlanName();
+	
+	@Query("Select distinct (planStatus) from CitizenPlan")
+	public List<String> getPlanStatus();
 
 }

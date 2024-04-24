@@ -15,9 +15,7 @@ import lombok.Setter;
 @Data
 @Entity
 @Table(name="CITIZEN_PLANS_INFO")
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
+
 public  class CitizenPlan 
 {
 	@Id
@@ -34,7 +32,5 @@ public  class CitizenPlan
 	private LocalDate  terminationDate;
 	private String  terminationRes;
 
-
-	
 
 }
