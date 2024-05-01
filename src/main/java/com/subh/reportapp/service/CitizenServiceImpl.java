@@ -2,7 +2,9 @@ package com.subh.reportapp.service;
 
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import com.subh.reportapp.entity.CitizenPlan;
@@ -27,10 +29,34 @@ public class CitizenServiceImpl implements CitizenService{
 		return crepo.getPlanStatus();
 	}
 
+	@SuppressWarnings("unlikely-arg-type")
 	@Override
 	public List<CitizenPlan> search(SearchRequest searchRequest) {
-		// TODO Auto-generated method stub
-		return null;
+
+       CitizenPlan entity = new CitizenPlan();
+
+   if(null!=searchRequest.getPlanName() &&!"".equals(searchRequest.getPlanName()))
+   {
+	   entity.setPlanName(searchRequest.getPlanName());
+   }
+   if(searchRequest.getPlanStatus()!=null &&!"".equals(searchRequest.getPlanStatus()))
+   {
+	 entity.setPlanStatus(searchRequest.getPlanStatus());
+   }
+   if(searchRequest.getGender()!=null &&!"".equals(searchRequest.getGender()))
+   {
+	   entity.setGender(searchRequest.getGender());
+   }
+   if(searchRequest.getStartDate()!=null &&!"".equals(searchRequest.getStartDate()))
+   {
+	   
+	   entity.setPlanStartDate(searchRequest.getStartDate());
+   }
+   if(searchRequest.getEndDate()!=null &&!"".equals(searchRequest.getEndDate()))
+   {
+	   entity.setPlanEndDate( searchRequest.getEndDate());
+   }
+		return crepo.findAll(Example.of(entity));
 	}
 
 	@Override

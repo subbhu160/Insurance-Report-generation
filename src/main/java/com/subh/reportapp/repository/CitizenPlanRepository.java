@@ -10,7 +10,7 @@ import com.subh.reportapp.entity.CitizenPlan;
 
 //@Repository
 public interface CitizenPlanRepository extends JpaRepository<CitizenPlan, Integer>{
-	@Query("Select distinct (planStatus) from CitizenPlan")
+	@Query("Select distinct (planName) from CitizenPlan")
 	public List<String> getPlanName();
 	
 	@Query("Select distinct (planStatus) from CitizenPlan")

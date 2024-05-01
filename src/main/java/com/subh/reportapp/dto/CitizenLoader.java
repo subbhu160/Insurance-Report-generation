@@ -45,7 +45,7 @@ public class CitizenLoader implements ApplicationRunner
 		c3.setPlanName("Food");
 		c3.setPlanStatus("Approved");
 		c3.setPlanStartDate(LocalDate.now());
-		c3.setPlanEndDate(LocalDate.now().plusMonths(6));
+		c3.setPlanEndDate(LocalDate.now().plusMonths(10));
 		c3.setBenefitAmt(4000.0);
 		
 		CitizenPlan c4 = new CitizenPlan();
